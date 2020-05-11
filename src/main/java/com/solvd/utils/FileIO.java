@@ -12,12 +12,13 @@ import java.util.Scanner;
 
 public class FileIO {
     private final static Logger LOGGER = Logger.getLogger(FileIO.class);
+
     public String readFromFile(String path) {
         File file = new File(path);
         try {
-            if (file.createNewFile()){
+            if (file.createNewFile()) {
                 LOGGER.info("File is created!");
-            }else{
+            } else {
                 LOGGER.info("File already exists.");
             }
         } catch (IOException e) {
@@ -43,13 +44,13 @@ public class FileIO {
         File file = new File(path);
         try {
             PrintWriter printWriter = new PrintWriter(file);
-            for (Object list: value){
+            for (Object list : value) {
                 printWriter.println(list);
             }
             printWriter.close();
         } catch (FileNotFoundException e) {
             LOGGER.error(e.getMessage());
-    }
+        }
     }
 
     public void writeToFile(String path, String value) {

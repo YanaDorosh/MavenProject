@@ -26,18 +26,19 @@ public class Fleet {
     }
 
     public void setMilitary(Military military) {
-       militaryList.add(military);
+        militaryList.add(military);
     }
 
     public void removeMilitary(int index) {
-        LOGGER.debug( militaryList.remove(index));
+        LOGGER.debug(militaryList.remove(index));
     }
 
     public List<Military> getMilitaryList() {
         Boat.countNumeration();
         return militaryList;
     }
-    public void setSubmarine(Submarine submarine){
+
+    public void setSubmarine(Submarine submarine) {
         submarineList.add(submarine);
     }
 

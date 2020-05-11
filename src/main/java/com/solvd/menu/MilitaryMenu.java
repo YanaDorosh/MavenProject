@@ -59,7 +59,7 @@ public class MilitaryMenu {
                 executeMenu(roadstead);
                 break;
             case 3:
-                methods.fileIO.writeToFile( methods.propertiesIO.getValueFromProperties(1),
+                methods.fileIO.writeToFile(methods.propertiesIO.getValueFromProperties(1),
                         roadstead.getMilitaryList());
             case 4:
                 methods.mainMenu.choosePlace();

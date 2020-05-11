@@ -5,6 +5,7 @@ import com.solvd.ships.civil.Civil;
 
 
 import java.util.Scanner;
+
 import org.apache.log4j.Logger;
 
 
