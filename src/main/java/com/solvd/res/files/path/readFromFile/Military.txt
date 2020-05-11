@@ -1,0 +1,6 @@
+1  Type Warship. Buoyancy: 0.86   Size: 102  Speed: 116676   Army 1000    Armament: AGM-84_Harpoon Is used nuclear or motor    Range of Battle  102000.0   Place of navigation - sea   Hulls  7
+2  Type Warship. Buoyancy: 0.67   Size: 98  Speed: 148160   Army 550    Armament: AGM-154_Joint_Standoff_Weapon Is used nuclear or motor    Range of Battle  98000.0   Place of navigation - sea   Hulls  7
+3  Type Warship. Buoyancy: 0.55   Size: 75  Speed: 101860   Army 600    Armament: JDAM_GPS-guided_bombs Is used nuclear or motor    Range of Battle  75000.0   Place of navigation -
+ sea   Hulls  7
+4  Type Warship. Buoyancy: 0.95   Size: 85  Speed: 42252   Army 556    Armament: B61_nuclear_bomb Is used nuclear or motor    Range of Battle  4000.0   Place of navigation - sea   Hulls  7
+5  Type Warship. Buoyancy: 0.68   Size: 150  Speed: 64820   Army 565    Armament: 225 Is used nuclear or motor    Range of Battle  4000.0   Place of navigation - sea   Hulls  7

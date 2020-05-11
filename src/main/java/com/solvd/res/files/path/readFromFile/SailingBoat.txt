@@ -1,0 +1,6 @@
+1 Type Sail boat. Cutter Buoyancy: 0.63   Size: 7  Speed: 6456    Number of sails: 2   Used two types of power: engine and wind power   Hulls:  1    Place of navigation - sea
+2 Type Sail boat. Catboat Buoyancy: 0.56   Size: 10  Speed: 6410    Number of sails: 7   Used two types of power: engine and wind power   Hulls:  1    Place of navigation - sea
+3 Type Sail boat. Dinghy Buoyancy: 0.95   Size: 13  Speed: 8120    Number of sails: 4   Used two types of power: engine and wind power   Hulls:  1    Place of navigation - sea
+4 Type Sail boat. Ketch Buoyancy: 0.52   Size: 11  Speed: 4820    Number of sails: 6   Used two types of power: engine and wind power   Hulls:  1    Place of navigation - sea
+5 Type Sail boat. Schooner Buoyancy: 0.53   Size: 15  Speed: 8520    Number of sails: 8   Used two types of power: engine and wind power   Hulls:  1    Place of navigation - sea
+6 Type Sail boat. Sloop Buoyancy: 0.78   Size: 35  Speed: 69820    Number of sails: 11   Used two types of power: engine and wind power   Hulls:  1    Place of navigation - sea

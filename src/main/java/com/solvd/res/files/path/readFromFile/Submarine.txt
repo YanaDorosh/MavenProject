@@ -1,0 +1,6 @@
+1 Submarine Type Warship. Buoyancy: 0.89   Size: 23  Speed: 100008   Army 54    Armament: CE2F/X100_war_torped  Is driven by atomic energy.    Range of Battle  115000.0   Place of navigation - sea   Hulls  2
+2 Submarine Type Warship. Buoyancy: 0.26   Size: 75  Speed: 122232   Army 564    Armament: torpedo_565РќСЂР°Р°  Is driven by atomic energy.    Range of Battle  375000.0   Place of navigation - sea   Hulls  2
+3 Submarine Type Warship. Buoyancy: 0.65   Size: 55  Speed: 416700   Army 250    Armament: DSV-3 Is driven by atomic energy.    Range of Battle  275000.0   Place of navigation - sea   Hulls  2
+4 Submarine Type Warship. Buoyancy: 0.65   Size: 23  Speed: 81488   Army 86    Armament: 21-in_torpedo_tubes  Is driven by atomic energy.    Range of Battle  115000.0   Place of navigation - sea   Hulls  2
+5 Submarine Type Warship. Buoyancy: 0.35   Size: 55  Speed: 103712   Army 223    Armament: USS_X-1 Is driven by atomic energy.    Range of Battle  275000.0   Place of navigation - sea   Hulls  2
+6 Submarine Type Warship. Buoyancy: 0.45   Size: 22  Speed: 277800   Army 289   Armament: M-100D Is driven by atomic energy.    Range of Battle  110000.0   Place of navigation - sea   Hulls  2

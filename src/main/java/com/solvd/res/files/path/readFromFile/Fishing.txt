@@ -1,0 +1,5 @@
+ishing. Type Service. 1 Civil.  Buoyancy: 0.65   Size: 22  Speed: 101860  Classification: trollers  Is used electricity or motor engines   Kilomiters:  269.97840172786175
+Fishing. Type Service. 2 Civil.  Buoyancy: 0.65   Size: 68  Speed: 109268  Classification: rap_setters  Is used electricity or motor engines   Kilomiters:  4805.61555075594
+Fishing. Type Service. 3 Civil.  Buoyancy: 0.55   Size: 68  Speed: 64820  Classification: seiners  Is used electricity or motor engines   Kilomiters:  2429.805615550756
+Fishing. Type Service. 4 Civil.  Buoyancy: 0.87   Size: 58  Speed: 45622  Classification: fishing_trawlers  Is used electricity or motor engines   Kilomiters:  3023.758099352052
+Fishing. Type Service. 5 Civil.  Buoyancy: 0.89   Size: 75  Speed: 58862  Classification: handline_fishing  Is used electricity or motor engines   Kilomiters:  4805.61555075594

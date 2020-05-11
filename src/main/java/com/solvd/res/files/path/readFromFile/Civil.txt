@@ -1,0 +1,4 @@
+1 Civil.  Buoyancy: 0.65   Size: 22  Speed: 101860 Classification: Special-purpose_vessels Is used electricity or motor engines
+2 Civil.  Buoyancy: 0.65   Size: 68  Speed: 109268 Classification: Recreational_boats Is used electricity or motor engines
+3 Civil.  Buoyancy: 0.55   Size: 68  Speed: 64820  Classification: Cruising_yachts Is used electricity or motor engines
+4 Civil.  Buoyancy: 0.57   Size: 65  Speed: 83340  Classification: Cross-channel Is used electricity or motor engines
