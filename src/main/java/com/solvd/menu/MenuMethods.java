@@ -125,7 +125,7 @@ public class MenuMethods {
             System.out.println("Choose format:");
             System.out.println("write to file ________1");
             System.out.println("write to json:________2");
-            System.out.println("3<-----______-Main menu");
+            System.out.println("3<------------Main menu");
             LOGGER.debug(format = sc.nextInt());
         } catch (InputMismatchException e) {
             LOGGER.error("Please choose correct number");
