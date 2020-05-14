@@ -20,7 +20,6 @@ public class MilitaryMenu {
     private String armament;
 
 
-
     public void chooseAction() {
         methods.chooseAction();
         switch (methods.action) {
@@ -28,10 +27,7 @@ public class MilitaryMenu {
                 executeArrayMenu(roadstead);
                 break;
             case 2:
-//                String jsonStr1="{\"buoyancy\":0.24,\"size\":55,\"speed\":33,\"armament\":\"55\"}";
-//                json.convertJsonStrToPOJO(jsonStr1);
-//                LOGGER.info("Name place from POJO: " + military.getArmament());
-//               // LOGGER.debug(methods.fileIO.readFromFile(methods.propertiesIO.getValueFromProperties(4)));
+                LOGGER.debug(methods.fileIO.readFromFile(methods.propertiesIO.getValueFromProperties(4)));
                 break;
             default:
                 System.out.println("enter correct number");
