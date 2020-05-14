@@ -1,9 +1,11 @@
 package com.solvd.menu;
 
-import com.solvd.myException.BouyancyException;
-import com.solvd.myException.SizeException;
-import com.solvd.myException.SpeedException;
+import com.solvd.ships.myException.BouyancyException;
+import com.solvd.ships.myException.SizeException;
+import com.solvd.ships.myException.SpeedException;
+import com.solvd.shipsConstructionCompany.Company;
 import com.solvd.utils.FileIO;
+import com.solvd.utils.ProcessingJson;
 import com.solvd.utils.PropertiesIO;
 import org.apache.log4j.Logger;
 
@@ -14,6 +16,7 @@ public class MenuMethods {
 
     private final static Logger LOGGER = Logger.getLogger(MenuMethods.class);
     protected int action;
+    protected int format;
     protected double buoyancy;
     protected int size;
     protected int speed;
@@ -75,7 +78,7 @@ public class MenuMethods {
     public void loopNumberOfShips() {
         try {
             do {
-                LOGGER.info("enter number of ships");
+                System.out.println("enter number of ships");
                 LOGGER.debug(ships = sc.nextInt());
             }
             while (ships <= 0);
@@ -102,7 +105,7 @@ public class MenuMethods {
     public void menuChoice() {
         System.out.println("________________________________________________________________");
         System.out.println("0: add information; 1: delete element; 2: display the collection");
-        System.out.println("3: write to file;                 4:change type of ship; 5: exit");
+        System.out.println("3: write to file; 4:show json;--->5:change type of ship; 6: exit");
     }
 
     public void chooseAction() {
@@ -115,5 +118,32 @@ public class MenuMethods {
             LOGGER.error("Please choose correct number");
             mainMenu.choosePlace();
         }
+    }
+
+    public void chooseWritingFormat() {
+        try {
+            System.out.println("Choose format:");
+            System.out.println("write to file ________1");
+            System.out.println("write to json:________2");
+            System.out.println("3<-----______-Main menu");
+            LOGGER.debug(format = sc.nextInt());
+        } catch (InputMismatchException e) {
+            LOGGER.error("Please choose correct number");
+            mainMenu.choosePlace();
+        }
+    }
+
+    public void showCompany() {
+        ProcessingJson json = new ProcessingJson();
+        Company company;
+        company = json.convertCompanyToJavaObject((propertiesIO.getValueFromProperties(8)));
+        System.out.println("_________________________________________________________");
+        System.out.println("Company:       " + company.getCompanyName());
+        System.out.println("Ship's name:   " + company.getDryCargo().getName());
+        System.out.println("Operator:      " + company.getDryCargo().getOperator());
+        System.out.println("Year:          " + company.getDryCargo().getYear());
+        System.out.println("IMO number:    " + company.getDryCargo().getImo_number());
+        System.out.println("_________________________________________________________");
+        LOGGER.debug("get company from file");
     }
 }

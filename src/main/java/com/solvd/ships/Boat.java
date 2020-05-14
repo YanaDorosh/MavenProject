@@ -29,7 +29,7 @@ public abstract class Boat implements IConstants {
         return size;
     }
 
-    public int convertSpeed() {
+    public int getSpeed() {
         return KNOT/speed  ;
     }
 
@@ -37,7 +37,7 @@ public abstract class Boat implements IConstants {
 
         String buoyancyStr = String.valueOf(getBuoyancy());
         String sizeStr = String.valueOf(getSize());
-        String speedStr = String.valueOf(convertSpeed());
+        String speedStr = String.valueOf(getSpeed());
         String infoBoat = " Buoyancy: " + getBuoyancy() + "   " + "Size: " + sizeStr + "  Speed: " + speedStr;
         return infoBoat;
     }

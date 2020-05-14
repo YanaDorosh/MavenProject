@@ -1,9 +1,9 @@
 package com.solvd.menu;
 
-import org.apache.log4j.Logger;
+        import org.apache.log4j.Logger;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
+        import java.util.InputMismatchException;
+        import java.util.Scanner;
 
 public class MainMenu {
     private final static Logger LOGGER = Logger.getLogger(MainMenu.class);
@@ -11,11 +11,13 @@ public class MainMenu {
     private Scanner sc = new Scanner(System.in);
 
     public void choosePlace() {
+        MenuMethods methods = new MenuMethods();
         try {
             System.out.println("Choose a place:  ");
             System.out.println("Fleet:____________1");
             System.out.println("Port:_____________2");
-            System.out.println("3<-------------Exit");
+            System.out.println("Company:__________3");
+            System.out.println("4<-------------Exit");
             int place = sc.nextInt();
             switch (place) {
                 case 1:
@@ -24,6 +26,10 @@ public class MainMenu {
                     chooseRoadstead();
                     break;
                 case 3:
+                    methods.showCompany();
+                    choosePlace();
+                    break;
+                case 4:
                     System.exit(0);
                 default:
                     LOGGER.info("Please choose correct number");

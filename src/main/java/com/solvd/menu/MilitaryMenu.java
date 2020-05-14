@@ -1,7 +1,8 @@
 package com.solvd.menu;
 
 import com.solvd.placeCollections.Roadstead;
-import com.solvd.ships.navy.military.Military;
+import com.solvd.ships.shipsTypes.military.Military;
+import com.solvd.utils.ProcessingJson;
 import org.apache.log4j.Logger;
 
 import java.util.InputMismatchException;
@@ -9,6 +10,7 @@ import java.util.Scanner;
 
 public class MilitaryMenu {
     private final static Logger LOGGER = Logger.getLogger(MilitaryMenu.class);
+    private ProcessingJson json = new ProcessingJson();
     private MenuMethods methods = new MenuMethods();
     private Scanner sc = new Scanner(System.in);
     private Roadstead roadstead = new Roadstead();
@@ -18,6 +20,7 @@ public class MilitaryMenu {
     private String armament;
 
 
+
     public void chooseAction() {
         methods.chooseAction();
         switch (methods.action) {
@@ -25,7 +28,10 @@ public class MilitaryMenu {
                 executeArrayMenu(roadstead);
                 break;
             case 2:
-                LOGGER.debug(methods.fileIO.readFromFile(methods.propertiesIO.getValueFromProperties(4)));
+//                String jsonStr1="{\"buoyancy\":0.24,\"size\":55,\"speed\":33,\"armament\":\"55\"}";
+//                json.convertJsonStrToPOJO(jsonStr1);
+//                LOGGER.info("Name place from POJO: " + military.getArmament());
+//               // LOGGER.debug(methods.fileIO.readFromFile(methods.propertiesIO.getValueFromProperties(4)));
                 break;
             default:
                 System.out.println("enter correct number");
@@ -33,6 +39,28 @@ public class MilitaryMenu {
                 break;
         }
     }
+
+    public void chooseWritingFormat() {
+        methods.chooseWritingFormat();
+        switch (methods.format) {
+            case 1:
+                methods.fileIO.writeToFile(methods.propertiesIO.getValueFromProperties(1),
+                        roadstead.getMilitaryList());
+                break;
+            case 2:
+                json.convertJavaToJsonFile(roadstead.getMilitaryList(),
+                        methods.propertiesIO.getValueFromProperties(7));
+                break;
+            case 3:
+                mainMenu.choosePlace();
+                break;
+            default:
+                System.out.println("enter correct number");
+                chooseWritingFormat();
+                break;
+        }
+    }
+
 
     /**
      * A menu for ArrayList collection that implements
@@ -59,12 +87,15 @@ public class MilitaryMenu {
                 executeMenu(roadstead);
                 break;
             case 3:
-                methods.fileIO.writeToFile(methods.propertiesIO.getValueFromProperties(1),
-                        roadstead.getMilitaryList());
+                chooseWritingFormat();
             case 4:
+                convertToJson();
+                methods.menuChoice();
+                executeMenu(roadstead);
+            case 5:
                 methods.mainMenu.choosePlace();
                 break;
-            case 5:
+            case 6:
                 System.out.println("Thanks for using the application");
                 System.exit(0);
                 sc.close();
@@ -73,9 +104,7 @@ public class MilitaryMenu {
                 LOGGER.info("enter correct number");
                 executeMenu(roadstead);
         }
-
     }
-
 
     /**
      * Method pass objects to collections and re-implement the second menu of choosing actions
@@ -123,4 +152,8 @@ public class MilitaryMenu {
         roadstead.removeMilitary(methods.delete - 1);
     }
 
+    public void convertToJson() {
+        String jsonStr = json.convertJavaToJsonStr(roadstead.getMilitaryList());
+        LOGGER.info(jsonStr);
+    }
 }

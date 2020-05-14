@@ -1,6 +1,5 @@
 package com.solvd.utils;
 
-import com.solvd.menu.CivilMenu;
 import org.apache.log4j.Logger;
 
 import java.io.File;
@@ -42,6 +41,15 @@ public class FileIO {
     public void writeToFile(String path, Collection<?> value) {
 
         File file = new File(path);
+        try {
+            if (file.createNewFile()) {
+                LOGGER.info("File is created!");
+            } else {
+                LOGGER.info("File already exists.");
+            }
+        } catch (IOException e) {
+            LOGGER.error(e.getMessage());
+        }
         try {
             PrintWriter printWriter = new PrintWriter(file);
             for (Object list : value) {

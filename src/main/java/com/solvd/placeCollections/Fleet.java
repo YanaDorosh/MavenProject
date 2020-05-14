@@ -1,9 +1,8 @@
 package com.solvd.placeCollections;
 
-import com.solvd.menu.SailingBoatMenu;
 import com.solvd.ships.Boat;
-import com.solvd.ships.navy.military.Military;
-import com.solvd.ships.navy.military.Submarine;
+import com.solvd.ships.shipsTypes.military.Military;
+import com.solvd.ships.shipsTypes.military.Submarine;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
@@ -12,8 +11,8 @@ import java.util.List;
 
 public class Fleet {
     private final static Logger LOGGER = Logger.getLogger(Fleet.class);
-    List<Military> militaryList = new ArrayList<Military>();
-    List<Submarine> submarineList = new ArrayList<Submarine>();
+    List<Military> militaryList = new ArrayList<>();
+    List<Submarine> submarineList = new ArrayList<>();
 
     public Fleet() {
 

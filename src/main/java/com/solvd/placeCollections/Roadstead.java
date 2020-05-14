@@ -1,21 +1,20 @@
 package com.solvd.placeCollections;
 
-import com.solvd.menu.SailingBoatMenu;
 import com.solvd.ships.Boat;
-import com.solvd.ships.civil.Civil;
-import com.solvd.ships.civil.SailingBoat;
-import com.solvd.ships.civil.service.servicetype.Fishing;
-import com.solvd.ships.navy.military.Military;
+import com.solvd.ships.shipsTypes.civil.Civil;
+import com.solvd.ships.shipsTypes.civil.SailingBoat;
+import com.solvd.ships.shipsTypes.civil.service.servicetype.Fishing;
+import com.solvd.ships.shipsTypes.military.Military;
 import org.apache.log4j.Logger;
 
 import java.util.*;
 
 public class Roadstead {
     private final static Logger LOGGER = Logger.getLogger(Roadstead.class);
-    private List<Military> militaryList = new ArrayList<Military>();
-    private LinkedList<Civil> linkedListCivils = new LinkedList<Civil>();
-    private Set<Fishing> fishingSet = new HashSet<Fishing>();
-    private Map<Integer, SailingBoat> sailingBoatMap = new HashMap<Integer, SailingBoat>();
+    private List<Military> militaryList = new ArrayList<>();
+    private LinkedList<Civil> linkedListCivils = new LinkedList<>();
+    private Set<Fishing> fishingSet = new HashSet<>();
+    private Map<Integer, SailingBoat> sailingBoatMap = new HashMap<>();
 
     /**
      * Member of the class for HashMap key

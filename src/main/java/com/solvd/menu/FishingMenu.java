@@ -1,9 +1,8 @@
 package com.solvd.menu;
 
 import com.solvd.placeCollections.Roadstead;
-import com.solvd.ships.civil.service.servicetype.Fishing;
-import com.solvd.utils.FileIO;
-import com.solvd.utils.PropertiesIO;
+import com.solvd.ships.shipsTypes.civil.service.servicetype.Fishing;
+import com.solvd.utils.ProcessingJson;
 import org.apache.log4j.Logger;
 
 import java.util.InputMismatchException;
@@ -11,6 +10,7 @@ import java.util.Scanner;
 
 public class FishingMenu {
     private final static Logger LOGGER = Logger.getLogger(FishingMenu.class);
+    private ProcessingJson json = new ProcessingJson();
     private MenuMethods methods = new MenuMethods();
     private Scanner sc = new Scanner(System.in);
     private Roadstead roadstead = new Roadstead();
@@ -32,6 +32,27 @@ public class FishingMenu {
             default:
                 LOGGER.info("enter correct number");
                 chooseAction();
+                break;
+        }
+    }
+
+    public void chooseWritingFormat() {
+        methods.chooseWritingFormat();
+        switch (methods.format) {
+            case 1:
+                methods.fileIO.writeToFile(methods.propertiesIO.getValueFromProperties(1),
+                        roadstead.getFishingSet());
+                break;
+            case 2:
+                json.convertJavaToJsonFile(roadstead.getFishingSet(),
+                        methods.propertiesIO.getValueFromProperties(7));
+                break;
+            case 3:
+                mainMenu.choosePlace();
+                break;
+            default:
+                System.out.println("enter correct number");
+                chooseWritingFormat();
                 break;
         }
     }
@@ -61,20 +82,23 @@ public class FishingMenu {
                 executeMenu(roadstead);
                 break;
             case 3:
-                methods.fileIO.writeToFile(methods.propertiesIO.getValueFromProperties(1), roadstead.getFishingSet());
+                chooseWritingFormat();
             case 4:
+                convertToJson();
+                methods.menuChoice();
+                executeMenu(roadstead);
+            case 5:
                 methods.mainMenu.choosePlace();
                 break;
-            case 5:
+            case 6:
                 System.out.println("Thanks for using the application");
                 System.exit(0);
+                sc.close();
                 break;
             default:
                 LOGGER.info("enter correct number");
                 executeMenu(roadstead);
-                sc.close();
         }
-
     }
 
     /**
@@ -121,5 +145,10 @@ public class FishingMenu {
     public void deletingSet(Roadstead roadstead) {
         methods.deleteAndCatch();
         roadstead.removeFishing(methods.delete - 1);
+    }
+
+    public void convertToJson() {
+        String jsonStr = json.convertJavaToJsonStr(roadstead.getFishingSet());
+        LOGGER.info(jsonStr);
     }
 }

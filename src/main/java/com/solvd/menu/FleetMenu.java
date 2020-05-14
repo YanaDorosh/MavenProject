@@ -2,8 +2,9 @@ package com.solvd.menu;
 
 import com.solvd.placeCollections.Fleet;
 import com.solvd.placeCollections.Roadstead;
-import com.solvd.ships.navy.military.Military;
-import com.solvd.ships.navy.military.Submarine;
+import com.solvd.ships.shipsTypes.military.Military;
+import com.solvd.ships.shipsTypes.military.Submarine;
+import com.solvd.utils.ProcessingJson;
 import org.apache.log4j.Logger;
 
 import java.util.InputMismatchException;
@@ -11,6 +12,7 @@ import java.util.Scanner;
 
 public class FleetMenu {
     private final static Logger LOGGER = Logger.getLogger(FleetMenu.class);
+    private ProcessingJson json = new ProcessingJson();
     private MenuMethods methods = new MenuMethods();
     private MainMenu mainMenu = new MainMenu();
     private Fleet fleet = new Fleet();
@@ -45,6 +47,37 @@ public class FleetMenu {
         }
     }
 
+    public void chooseWritingFormat() {
+        methods.chooseWritingFormat();
+        switch (methods.format) {
+            case 1:
+                if (mainMenu.militaryShip == 1) {
+                    methods.fileIO.writeToFile(methods.propertiesIO.getValueFromProperties(1),
+                            fleet.getMilitaryList());
+                } else {
+                    methods.fileIO.writeToFile(methods.propertiesIO.getValueFromProperties(1),
+                            fleet.getSubmarineList());
+                }
+                break;
+            case 2:
+                if (mainMenu.militaryShip == 1) {
+                    json.convertJavaToJsonFile(fleet.getMilitaryList(),
+                            methods.propertiesIO.getValueFromProperties(7));
+                } else {
+                    json.convertJavaToJsonFile(fleet.getSubmarineList(),
+                            methods.propertiesIO.getValueFromProperties(7));
+                }
+                break;
+            case 3:
+                mainMenu.choosePlace();
+                break;
+            default:
+                System.out.println("enter correct number");
+                chooseWritingFormat();
+                break;
+        }
+    }
+
     public void executeMenu(Fleet fleet) {
         int menu = sc.nextInt();
         switch (menu) {
@@ -64,20 +97,15 @@ public class FleetMenu {
                 } else {
                     fleet.printInfoColection(fleet.getSubmarineList());
                 }
-
                 methods.menuChoice();
                 executeMenu(fleet);
                 break;
             case 3:
-                if (mainMenu.militaryShip == 1) {
-                    methods.fileIO.writeToFile(methods.propertiesIO.getValueFromProperties(1),
-                            fleet.getMilitaryList());
-                } else {
-                    methods.fileIO.writeToFile(methods.propertiesIO.getValueFromProperties(1),
-                            fleet.getSubmarineList());
-                }
+                chooseWritingFormat();
             case 4:
-                methods.mainMenu.choosePlace();
+                convertToJson();
+                methods.menuChoice();
+                executeMenu(fleet);
                 break;
             case 5:
                 System.out.println("Thanks for using the application");
@@ -140,7 +168,11 @@ public class FleetMenu {
 
     public void deletingArray(Fleet fleet) {
         methods.deleteAndCatch();
-        fleet.removeMilitary(methods.delete - 1);
+        if (mainMenu.militaryShip == 1) {
+            fleet.removeMilitary(methods.delete - 1);
+        } else {
+            fleet.removeSubmarine(methods.delete - 1);
+        }
     }
 
     public void executeArrayMenu2(Roadstead roadstead) {
@@ -151,5 +183,16 @@ public class FleetMenu {
         }
         methods.menuChoice();
         executeMenu(fleet);
+    }
+
+    public void convertToJson() {
+        if (mainMenu.militaryShip == 1) {
+            String jsonStr = json.convertJavaToJsonStr(fleet.getMilitaryList());
+            LOGGER.info(jsonStr);
+        } else {
+            String jsonStr = json.convertJavaToJsonStr(fleet.getSubmarineList());
+            LOGGER.info(jsonStr);
+        }
+
     }
 }

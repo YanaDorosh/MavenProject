@@ -1,0 +1,26 @@
+{
+  "companyName": "Daewoo Shipbuilding and Marine Engineering ",
+  "dryCargo": {
+    "name": "Ore Brazil",
+    "operator": "China Merchants Energy Shipping",
+    "year": 2011,
+    "imo_number": 9488919
+  },
+  "companyName": "STX Offshore and Shipbuilding",
+  "dryCargo": {
+    "name": "Sea Beijing",
+    "operator": "Pan Ocean",
+    "year": 2011,
+    "imo_number": 9575448
+  },
+  "companyName": "Jiangsu Rongsheng Heavy Industries",
+  "dryCargo": {
+    "name": "Sea Qingdao",
+    "operator": "Oman Shipping Company",
+    "year": 2015,
+    "imo_number": 9575558
+  }
+}
+
+
+

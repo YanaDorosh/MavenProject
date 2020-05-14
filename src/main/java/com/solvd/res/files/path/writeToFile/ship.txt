@@ -1,0 +1,2 @@
+1 Civil.  Buoyancy: 0.24   Size: 4  Speed: 52  Classification: 2  Is used electricity or motor engines 
+2 Civil.  Buoyancy: 0.24   Size: 4  Speed: 52  Classification: 2  Is used electricity or motor engines 
