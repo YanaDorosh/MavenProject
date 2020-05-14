@@ -1,0 +1,37 @@
+[ INFO ] - com.solvd.utils.FileIO:21 - File already exists.
+[ INFO ] - com.solvd.utils.FileIO:30 - 1 Submarine Type Warship. Buoyancy: 0.89   Size: 23  Speed: 100008   Army 54    Armament: CE2F/X100_war_torped  Is driven by atomic energy.    Range of Battle  115000.0   Place of navigation - sea   Hulls  2
+[ INFO ] - com.solvd.utils.FileIO:30 - 2 Submarine Type Warship. Buoyancy: 0.26   Size: 75  Speed: 122232   Army 564    Armament: torpedo_565РќСЂР°Р°  Is driven by atomic energy.    Range of Battle  375000.0   Place of navigation - sea   Hulls  2
+[ INFO ] - com.solvd.utils.FileIO:30 - 3 Submarine Type Warship. Buoyancy: 0.65   Size: 55  Speed: 416700   Army 250    Armament: DSV-3 Is driven by atomic energy.    Range of Battle  275000.0   Place of navigation - sea   Hulls  2
+[ INFO ] - com.solvd.utils.FileIO:30 - 4 Submarine Type Warship. Buoyancy: 0.65   Size: 23  Speed: 81488   Army 86    Armament: 21-in_torpedo_tubes  Is driven by atomic energy.    Range of Battle  115000.0   Place of navigation - sea   Hulls  2
+[ INFO ] - com.solvd.utils.FileIO:30 - 5 Submarine Type Warship. Buoyancy: 0.35   Size: 55  Speed: 103712   Army 223    Armament: USS_X-1 Is driven by atomic energy.    Range of Battle  275000.0   Place of navigation - sea   Hulls  2
+[ INFO ] - com.solvd.utils.FileIO:30 - 6 Submarine Type Warship. Buoyancy: 0.45   Size: 22  Speed: 277800   Army 289   Armament: M-100D Is driven by atomic energy.    Range of Battle  110000.0   Place of navigation - sea   Hulls  2
+[ ERROR] - com.solvd.menu.MenuMethods:44 -    Buoyancy: 0.24
+[ ERROR] - com.solvd.menu.MenuMethods:45 - Buoyancy is incorrect. Enter number more then 0.23 and less than 0.98
+[ ERROR] - com.solvd.menu.MenuMethods:55 -    Size: 4
+[ ERROR] - com.solvd.menu.MenuMethods:56 - Size is incorrect. Enter size more than 3 miters 
+[ ERROR] - com.solvd.menu.MenuMethods:67 -    Speed: 35
+[ ERROR] - com.solvd.menu.MenuMethods:68 - Speed is incorrect. Enter speed between 30 and 300 km
+[ ERROR] - com.solvd.menu.MenuMethods:44 -    Buoyancy: 0.24
+[ ERROR] - com.solvd.menu.MenuMethods:45 - Buoyancy is incorrect. Enter number more then 0.23 and less than 0.98
+[ ERROR] - com.solvd.menu.MenuMethods:55 -    Size: 4
+[ ERROR] - com.solvd.menu.MenuMethods:56 - Size is incorrect. Enter size more than 3 miters 
+[ ERROR] - com.solvd.menu.MenuMethods:67 -    Speed: 35
+[ ERROR] - com.solvd.menu.MenuMethods:68 - Speed is incorrect. Enter speed between 30 and 300 km
+[ INFO ] - com.solvd.utils.ProcessingJson:26 - convert to string, finished!
+[ INFO ] - com.solvd.menu.CivilMenu:141 - [ {
+  "buoyancy" : 0.24,
+  "size" : 4,
+  "speed" : 52,
+  "classification" : "2",
+  "infoEngine" : "  Is used electricity or motor engines ",
+  "infoCivil" : "1 Civil.  Buoyancy: 0.24   Size: 4  Speed: 52  Classification: 2  Is used electricity or motor engines ",
+  "infoBoat" : " Buoyancy: 0.24   Size: 4  Speed: 52"
+}, {
+  "buoyancy" : 0.24,
+  "size" : 4,
+  "speed" : 52,
+  "classification" : "2",
+  "infoEngine" : "  Is used electricity or motor engines ",
+  "infoCivil" : "2 Civil.  Buoyancy: 0.24   Size: 4  Speed: 52  Classification: 2  Is used electricity or motor engines ",
+  "infoBoat" : " Buoyancy: 0.24   Size: 4  Speed: 52"
+} ]
