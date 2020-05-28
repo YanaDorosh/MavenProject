@@ -32,6 +32,7 @@ public class FleetMenu {
         switch (methods.action) {
             case 1:
                 executeFleetMenu(fleet);
+                mainMenu.choosePlace();
                 break;
             case 2:
                 if (mainMenu.militaryShip == 1)
@@ -39,6 +40,7 @@ public class FleetMenu {
                 else {
                     LOGGER.debug(methods.fileIO.readFromFile(methods.propertiesIO.getValueFromProperties(5)));
                 }
+                mainMenu.choosePlace();
                 break;
             default:
                 LOGGER.info("enter correct number");

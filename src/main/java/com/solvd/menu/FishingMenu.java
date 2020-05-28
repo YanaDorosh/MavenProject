@@ -25,9 +25,11 @@ public class FishingMenu {
         switch (methods.action) {
             case 1:
                 executeSetMenu(roadstead);
+                mainMenu.choosePlace();
                 break;
             case 2:
                 LOGGER.debug(methods.fileIO.readFromFile(methods.propertiesIO.getValueFromProperties(3)));
+                mainMenu.choosePlace();
                 break;
             default:
                 LOGGER.info("enter correct number");

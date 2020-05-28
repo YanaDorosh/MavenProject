@@ -1,23 +1,26 @@
 package com.solvd.menu;
 
-        import org.apache.log4j.Logger;
+import com.solvd.db.InformationFromBD;
+import org.apache.log4j.Logger;
 
-        import java.util.InputMismatchException;
-        import java.util.Scanner;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class MainMenu {
     private final static Logger LOGGER = Logger.getLogger(MainMenu.class);
     protected static int militaryShip;
     private Scanner sc = new Scanner(System.in);
+    private InformationFromBD information = new InformationFromBD();
 
     public void choosePlace() {
         MenuMethods methods = new MenuMethods();
         try {
             System.out.println("Choose a place:  ");
-            System.out.println("Fleet:____________1");
-            System.out.println("Port:_____________2");
-            System.out.println("Company:__________3");
-            System.out.println("4<-------------Exit");
+            System.out.println("Fleet:___________________1");
+            System.out.println("Port:____________________2");
+            System.out.println("Company:_________________3");
+            System.out.println("Display a list of ships:_4");
+            System.out.println("5<--------------------Exit");
             int place = sc.nextInt();
             switch (place) {
                 case 1:
@@ -30,6 +33,10 @@ public class MainMenu {
                     choosePlace();
                     break;
                 case 4:
+                    information.viewTable();
+                    choosePlace();
+                    break;
+                case 5:
                     System.exit(0);
                 default:
                     LOGGER.info("Please choose correct number");

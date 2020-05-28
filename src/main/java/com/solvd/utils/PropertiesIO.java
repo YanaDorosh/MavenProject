@@ -30,6 +30,21 @@ public class PropertiesIO {
         return "default";
     }
 
+    public String getValueForBD(String key) {
+        String PATH_BD = "db" + separator + "db.properties";
+        Properties properties = new Properties();
+        FileInputStream inputStream = null;
+        try {
+            inputStream = new FileInputStream(PATH_BD);
+            properties.load(inputStream);
+            inputStream.close();
+            return properties.getProperty(key);
+        } catch (IOException e) {
+            LOGGER.error(e.getMessage());
+        }
+        return "default";
+    }
+
     public void setValueToProperties(int key, String value) {
         Properties properties = new Properties();
         try {

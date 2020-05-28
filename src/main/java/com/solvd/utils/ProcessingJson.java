@@ -46,7 +46,7 @@ public class ProcessingJson {
     }
 
 
-    public Company convertJsonStrToPOJO(String jsonStr) {
+    public Company convertCompanyJsonStrToPOJO(String jsonStr) {
 
         Company company = null;
 

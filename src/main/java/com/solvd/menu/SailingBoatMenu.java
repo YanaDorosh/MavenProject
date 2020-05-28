@@ -24,9 +24,11 @@ public class SailingBoatMenu {
         switch (methods.action) {
             case 1:
                 executeMapMenu(roadstead);
+                mainMenu.choosePlace();
                 break;
             case 2:
                 LOGGER.debug(methods.fileIO.readFromFile(methods.propertiesIO.getValueFromProperties(6)));
+                mainMenu.choosePlace();
                 break;
             default:
                 LOGGER.info("enter correct number");

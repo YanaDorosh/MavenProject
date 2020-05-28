@@ -25,9 +25,11 @@ public class MilitaryMenu {
         switch (methods.action) {
             case 1:
                 executeArrayMenu(roadstead);
+                mainMenu.choosePlace();
                 break;
             case 2:
                 LOGGER.debug(methods.fileIO.readFromFile(methods.propertiesIO.getValueFromProperties(4)));
+                mainMenu.choosePlace();
                 break;
             default:
                 System.out.println("enter correct number");

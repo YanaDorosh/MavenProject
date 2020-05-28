@@ -1,9 +1,12 @@
 package com.solvd.menu;
 
+import com.solvd.db.InformationToBD;
 import com.solvd.placeCollections.Roadstead;
 import com.solvd.ships.shipsTypes.civil.Civil;
 
 
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
 
 import com.solvd.utils.ProcessingJson;
@@ -20,15 +23,22 @@ public class CivilMenu {
     private MainMenu mainMenu;
     private String classification;
     private Civil civil;
+    private InformationToBD toBD = new InformationToBD();
 
     public void chooseAction() {
-        methods.chooseAction();
+        methods.chooseAction(civil);
         switch (methods.action) {
             case 1:
                 executeLinkedMenu(roadstead);
+                mainMenu.choosePlace();
                 break;
             case 2:
                 LOGGER.debug(methods.fileIO.readFromFile(methods.propertiesIO.getValueFromProperties(2)));
+                mainMenu.choosePlace();
+                break;
+            case 3:
+                toBD.CreateTableCivil();
+                mainMenu.choosePlace();
                 break;
             default:
                 LOGGER.info("enter correct number");

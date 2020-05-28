@@ -3,6 +3,7 @@ package com.solvd.menu;
 import com.solvd.ships.myException.BouyancyException;
 import com.solvd.ships.myException.SizeException;
 import com.solvd.ships.myException.SpeedException;
+import com.solvd.ships.shipsTypes.civil.Civil;
 import com.solvd.shipsConstructionCompany.Company;
 import com.solvd.utils.FileIO;
 import com.solvd.utils.ProcessingJson;
@@ -120,6 +121,19 @@ public class MenuMethods {
         }
     }
 
+    public void chooseAction(Civil civil) {
+        try {
+            System.out.println("Choose an action:");
+            System.out.println("add information________1");
+            System.out.println("read from file:________2");
+            System.out.println("write to database:_____3");
+            LOGGER.debug(action = sc.nextInt());
+        } catch (InputMismatchException e) {
+            LOGGER.error("Please choose correct number");
+            mainMenu.choosePlace();
+        }
+    }
+
     public void chooseWritingFormat() {
         try {
             System.out.println("Choose format:");
@@ -146,4 +160,5 @@ public class MenuMethods {
         System.out.println("_________________________________________________________");
         LOGGER.debug("get company from file");
     }
+
 }
