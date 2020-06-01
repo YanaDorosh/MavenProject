@@ -27,7 +27,7 @@ public class InformationToBD {
                     " (0.59, 145, 255, 'Cruising_yachts', 'electricity')," +
                     " (0.68, 355, 155, 'Recreational_boats', 'diesel engine')");
             LOGGER.info("Data was added to database");
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             LOGGER.error(e.getMessage());
 

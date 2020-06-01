@@ -27,7 +27,7 @@ public class InformationFromBD {
                         + "\t" + result.getString("owner"));
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             LOGGER.error(e.getMessage());
 

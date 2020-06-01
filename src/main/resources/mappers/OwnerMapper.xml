@@ -1,0 +1,31 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com/solvd/dao/IOwner">
+<!--    <resultMap id="owner" type="models.Owner">-->
+<!--    <id property='id' column='id'/>-->
+<!--    <result property='name' column='name'/>-->
+<!--    <result property='year' column='year'/>-->
+<!--    <result property='country' column='country'/>-->
+<!--</resultMap>-->
+
+    <select id="getOwnerById" parameterType="java.lang.Long">
+        select * from Owner
+        where id = #{id}
+    </select>
+<!--    <select id="getOwner" resultMap="Owner">-->
+<!--        select * from Driver-->
+<!--    </select>-->
+<!--    <insert id="insertOwner" parameterType="models.Owner">-->
+<!--        insert into Driver(id, name, year, country)-->
+<!--        values (#{id}, #{name}, #{year}, #{country})-->
+<!--    </insert>-->
+<!--    <update id="updateOwner" parameterType="models.Owner">-->
+<!--        update Owner-->
+<!--        set year = #{year}-->
+<!--        where id = #{id}-->
+<!--    </update>-->
+<!--    <delete id="deleteOwner" parameterType="models.Owner">-->
+<!--        delete from Owner-->
+<!--        where id = #{id}-->
+<!--        </delete>-->
+</mapper>

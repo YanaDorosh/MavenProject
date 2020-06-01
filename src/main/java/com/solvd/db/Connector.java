@@ -26,7 +26,7 @@ public class Connector {
                     propertiesIO.getValueForBD("user"),
                     propertiesIO.getValueForBD("password"));
             LOGGER.debug("Database connected");
-        } catch (Exception e) {
+        } catch (SQLException | ClassNotFoundException e) {
             LOGGER.error("Database Connection Creation Failed :"+ e.getStackTrace());
         }
         return connection;
